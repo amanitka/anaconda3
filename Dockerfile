@@ -20,6 +20,9 @@ RUN conda update conda
 RUN conda update anaconda
 RUN conda update --all
 
+# Install BeakerX
+RUN conda install -c beakerx beakerx_all
+
 # Configuring access to Jupyter
 RUN mkdir /opt/notebooks
 RUN jupyter notebook --generate-config --allow-root
@@ -28,4 +31,4 @@ RUN echo "c.NotebookApp.password = u'sha1:6a3f528eec40:6e896b6e4828f525a6e20e541
 EXPOSE 8888
 
 # Run Jupytewr notebook as Docker main process
-CMD ["jupyter", "notebook", "--allow-root", "--notebook-dir=/opt/notebooks", "--ip='*'", "--port=8888", "--no-browser"]
+CMD ["jupyter", "lab", "--allow-root", "--notebook-dir=/opt/notebooks", "--ip='*'", "--port=8888", "--no-browser"]
