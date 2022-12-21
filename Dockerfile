@@ -21,7 +21,8 @@ RUN conda update anaconda
 RUN conda update --all
 
 # Install BeakerX
-#RUN conda install -c beakerx beakerx_all
+RUN conda update conda -c conda-canary
+RUN conda install -c beakerx beakerx_all
 
 # Configuring access to Jupyter
 RUN mkdir /opt/notebooks
