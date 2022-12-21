@@ -21,9 +21,7 @@ RUN conda update anaconda
 RUN conda update --all
 
 # Install BeakerX
-RUN conda update conda -c conda-canary
-RUN conda config --set channel_priority false
-RUN conda install -c beakerx beakerx_all
+RUN conda install -c conda-forge beakerx
 
 # Configuring access to Jupyter
 RUN mkdir /opt/notebooks
