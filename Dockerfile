@@ -22,7 +22,6 @@ RUN conda update --all
 
 # Install BeakerX
 RUN conda config --env --add pinned_packages 'openjdk>=11.0.1'
-RUN conda install openjdk
 RUN conda install -c conda-forge beakerx
 
 # Configuring access to Jupyter
