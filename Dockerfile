@@ -21,7 +21,7 @@ RUN conda update anaconda
 RUN conda update --all
 
 # Install BeakerX
-RUN conda install -c conda-forge openjdk=17.0.3
+RUN conda install -c conda-forge openjdk=17
 RUN conda config --env --add pinned_packages 'openjdk>11.0.15'
 RUN conda install -c conda-forge beakerx
 #RUN conda install -c conda-forge beakerx
