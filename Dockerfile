@@ -21,7 +21,10 @@ RUN conda update anaconda
 RUN conda update --all
 
 # Install BeakerX
-RUN conda install -c conda-forge beakerx
+#RUN conda install -c conda-forge openjdk
+RUN conda config --env --add pinned_packages 'openjdk=17.0.3'
+RUN conda install -y -c conda-forge beakerx
+#RUN conda install -c conda-forge beakerx
 
 # Configuring access to Jupyter
 RUN mkdir /opt/notebooks
