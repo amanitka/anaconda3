@@ -17,6 +17,8 @@ ENV PATH /root/anaconda3/bin:$PATH
 
 # Updating Anaconda packages
 RUN conda update conda
+RUN conda update --name base conda
+RUN conda install anaconda
 RUN conda update anaconda
 RUN conda update --all
 
